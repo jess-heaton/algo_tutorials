@@ -1,0 +1,17 @@
+n_max = 1000
+
+pbar <- function(x) {
+  return((1-abs(x-1)))
+}
+
+acc <- c()
+n <- 0
+M <- 2
+while(n < n_max) {
+  u <- runif(1)
+  x <- runif(1,0,2)
+  if (u < (pbar(x)/ (M*0.5)))
+    acc[n+1] = x
+    n = n+1
+}
+hist(acc)
